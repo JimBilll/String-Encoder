@@ -8,8 +8,6 @@ testcode = encoder.encode(word)
 
 print("test code: " + str(testcode))
 
-testfactor = encoder.decode(testcode)
+testword = encoder.decode(testcode)
 
-print("test factor: " + str(testfactor))
-
-print("eval test factor: " + str(encoder.evalFactors(testfactor)))
+print("eval test word: " + str(testword))

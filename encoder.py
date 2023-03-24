@@ -25,7 +25,16 @@ def encode(word):
 
 # Decode a given code to a word
 def decode(code):
-    return prime_factors(code)
+    # Find the prime factors, evaluate those factors. Declare empty array for the decoded word
+    factors = prime_factors(code)
+    chars = evalFactors(factors)
+    word = []
+    
+    # convert back the character values and puts their respective chars into word
+    for x in chars:
+        word.append(chr(x + 64))
+    
+    return word
 
 # Evaluate the factors into a correctly formatted array
 def evalFactors(factors):
@@ -41,12 +50,6 @@ def evalFactors(factors):
         else:
             break
     return newArr
-    
-                
-
-
-
-        
 
 
 #
@@ -65,7 +68,7 @@ def primes2(n):
             sieve[k*(k-2*(i&1)+4)//3::2*k] = [False] * ((n//6-k*(k-2*(i&1)+4)//6-1)//k+1)
     return [2,3] + [3*i+1|1 for i in range(1,n//3-correction) if sieve[i]]
 
-# Create an array of the prime factors of a number
+# Create an array of the prime factors of a number (https://stackoverflow.com/a/22808285)
 def prime_factors(n):
     i = 2
     factors = []
