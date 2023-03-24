@@ -1,13 +1,24 @@
 import encoder
 
-# Define the word as an array of characters
-word = ["A","B","H"]
+def encodeMode():
+    inputWord = input("Enter a word to encode: ")
+    # Define the word as an array of characters
+    word = list(inputWord)
+    # Encode and print the word
+    code = encoder.encode(word)
+    print("Encoded word: " + str(code))
 
-# Encode and print the word
-testcode = encoder.encode(word)
 
-print("test code: " + str(testcode))
+def decodeMode():
+    inputCode = int(input("Enter a code to decode: "))
+    word = encoder.decode(inputCode)
+    print("Decoded word: " + "".join(word))
 
-testword = encoder.decode(testcode)
+inputMode = input("Gödel Word Encoder\nEnter mode - Encode (e), Decode (d), Exit (x): ")
 
-print("eval test word: " + str(testword))
+if inputMode == "e":
+    encodeMode()
+elif inputMode == "d":
+    decodeMode()
+elif inputMode == "x":
+    print("Exiting.")
