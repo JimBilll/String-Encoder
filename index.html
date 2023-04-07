@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gödel Word Encoder</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
     <h1>Gödel Word Encoder</h1>
-    <p>This is just a placeholder test page</p>
+    <textarea name="input" id="inp" cols="30" rows="10"></textarea>
+        <button py-click="read()" id="readButton" class="py-button">read</button>
+        <py-script src="frontend.py" />
+        <py-script>
+            import js
+            def read():
+                text = Element("inp").element.value
+                readInp(text)
+        </py-script>
 </body>
 </html>
