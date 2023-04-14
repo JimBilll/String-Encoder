@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gödel Word Encoder</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <link rel="style" href="styles.css">
+    <py-config>
+        [[fetch]]
+        files = ["/frontend.py", "/encoder.py"]
+    </py-config>
 <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
     <h1>Gödel Word Encoder</h1>
-    <textarea name="input" id="inp" cols="30" rows="10"></textarea>
-        <button py-click="read()" id="readButton" class="py-button">read</button>
-        <py-script src="frontend.py" />
-        <py-script>
-            import js
-            def read():
-                text = Element("inp").element.value
-                readInp(text)
-        </py-script>
+    <textarea name="input" id="inp" oninput="this.value = this.value.toUpperCase()" cols="30" rows="10"></textarea>
+    <button py-click="read()" id="readButton" class="py-button">read</button>
+    <py-script>
+        import js
+        import frontend
+        def read():
+            text = Element("inp").element.value
+            frontend.readInp(text)
+    </py-script>
 </body>
 </html>

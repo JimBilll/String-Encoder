@@ -1,4 +1,5 @@
 import re
+import encoder
 
 def readInp(x):
     y = re.search("[a-z,A-Z]+", x)
@@ -7,3 +8,4 @@ def readInp(x):
     else:
         print(x)
         print(y)
+        print(encoder.encode(x))
