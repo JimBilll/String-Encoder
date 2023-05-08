@@ -51,6 +51,29 @@ def evalFactors(factors):
             break
     return newArr
 
+# Generate the equation for a given word
+def genEq(word):
+    # Define the char array for storing the shifted unicode values
+    # and the eq variable for holding the equation.
+    chars = []
+    Eq = ''
+    
+    # Put the character values for each letter into the char array
+    for x in word:
+        chars.append(ord(x) - 64)
+
+    # Generate an array of prime numbers < 2000
+    primeNums = primes2(2000)
+
+    # Concatenate the multiplication of each prime to the power of its respective char value
+    i = 0
+    for x in chars:
+        if i == 0:
+            Eq += "2<sup>" + str(x) + "</sup> "
+        else:
+            Eq += "× " + str(primeNums[i]) + "<sup>" + str(x) + "</sup> "
+        i = i + 1
+    return Eq
 
 #
 # Code shamelessly stolen from Stack Overflow
