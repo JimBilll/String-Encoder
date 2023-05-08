@@ -10,7 +10,7 @@ def encode(word):
     for x in word:
         chars.append(ord(x) - 64)
 
-    print(chars)
+    # print(chars)
 
     # Generate an array of prime numbers < 2000
     primeNums = primes2(2000)
