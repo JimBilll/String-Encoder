@@ -1,6 +1,17 @@
 h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    padding-left: 10px;
+    margin-top: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: dodgerblue;
 }
 
 #inputArea textarea {
@@ -16,6 +27,7 @@ textarea:focus {
 }
 
 #inputArea button {
+    background-color: dodgerblue;
     width: 120px;
     height: 75px;
     margin-top: 10px;

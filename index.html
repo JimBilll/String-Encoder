@@ -11,10 +11,11 @@
         [[fetch]]
         files = ["/frontend.py", "/encoder.py"]
     </py-config>
-<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
     <h1>Gödel Word Encoder</h1>
+    <h3>By <a href="https://www2.macs.hw.ac.uk/~jm2022/">James McLean</a></h3>
     <div id="inputArea">
         <textarea name="text input" id="textField" oninput="this.value = this.value.toUpperCase()" cols="15" rows="1" maxlength="10" placeholder="Type..."></textarea>
         <button py-click="encodeText()" id="encodeButton" class="py-button">encode</button>
