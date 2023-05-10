@@ -18,12 +18,10 @@
     <div id="inputArea">
         <textarea name="text input" id="textField" oninput="this.value = this.value.toUpperCase()" cols="30" rows="10"></textarea>
         <button py-click="encodeText()" id="encodeButton" class="py-button">encode</button>
-        <textarea name="code input" id="codeField" oninput="this.value = this.value.toUpperCase()" cols="30" rows="10"></textarea>
         <button py-click="decodeText()" id="decodeButton" class="py-button">decode</button>
     </div>
-    <div id="outputArea">
-        
-    </div>
+    <div id="outputArea"></div>
+    <div id="note">Note: If you try to decode a random Godel number there's a good chance it will not decode correctly. Many numbers you may try require primes much higher than are generated. Only so many primes are generated for the sake of program efficiency. However, any number encoded by the program should work.</div>
     <py-script>
         import js
         import frontend
@@ -33,8 +31,8 @@
                 text = Element("textField").value
                 outArea.element.innerHTML = frontend.readText(text)
         def decodeText():
-            if (Element("codeField").value != ''):
-                text = Element("codeField").value
+            if (Element("textField").value != ''):
+                text = Element("textField").value
                 outArea.element.innerHTML = frontend.readCode(text)
     </py-script>
 </body>
