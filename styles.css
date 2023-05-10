@@ -16,6 +16,7 @@ a {
 
 #inputArea textarea {
     resize: none;
+    overflow: hidden;
     padding-left: 10px;
     font-size: 50px;
     height: 60px;

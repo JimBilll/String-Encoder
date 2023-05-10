@@ -17,9 +17,14 @@
     <h1>Gödel Word Encoder</h1>
     <h3>By <a href="https://www2.macs.hw.ac.uk/~jm2022/" target="_blank">James McLean</a></h3>
     <div id="inputArea">
-        <textarea name="text input" id="textField" oninput="this.value = this.value.toUpperCase()" cols="15" rows="1" maxlength="10" placeholder="Type..."></textarea>
-        <button py-click="encodeText()" id="encodeButton" class="py-button">encode</button>
-        <button py-click="decodeText()" id="decodeButton" class="py-button">decode</button>
+        <div>
+            <textarea name="text input" id="textField" oninput="this.value = this.value.toUpperCase()" cols="15" rows="1" maxlength="10" placeholder="Word..."></textarea>
+            <button py-click="encodeText()" id="encodeButton" class="py-button">encode</button>
+        </div>
+        <div>
+            <textarea name="code input" id="codeField" oninput="this.value = this.value.toUpperCase()" cols="15" rows="1" wrap = "off" placeholder="Code..."></textarea>
+            <button py-click="decodeText()" id="decodeButton" class="py-button">decode</button>
+        </div>
     </div>
     <div id="outputArea"></div>
     <br><br>
@@ -32,8 +37,8 @@
                 text = Element("textField").value
                 outArea.element.innerHTML = frontend.readText(text)
         def decodeText():
-            if (Element("textField").value != ''):
-                text = Element("textField").value
+            if (Element("codeField").value != ''):
+                text = Element("codeField").value
                 outArea.element.innerHTML = frontend.readCode(text)
     </py-script>
     <footer id="footer">
