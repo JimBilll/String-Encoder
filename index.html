@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gödel Word Encoder</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <link rel="style" href="styles.css">
     <py-config>
         [[fetch]]
         files = ["/frontend.py", "/encoder.py"]
@@ -16,12 +16,12 @@
 <body>
     <h1>Gödel Word Encoder</h1>
     <div id="inputArea">
-        <textarea name="text input" id="textField" oninput="this.value = this.value.toUpperCase()" cols="30" rows="10"></textarea>
+        <textarea name="text input" id="textField" oninput="this.value = this.value.toUpperCase()" cols="15" rows="1" maxlength="10" placeholder="Type..."></textarea>
         <button py-click="encodeText()" id="encodeButton" class="py-button">encode</button>
         <button py-click="decodeText()" id="decodeButton" class="py-button">decode</button>
     </div>
     <div id="outputArea"></div>
-    <div id="note">Note: If you try to decode a random Godel number there's a good chance it will not decode correctly. Many numbers you may try require primes much higher than are generated. Only so many primes are generated for the sake of program efficiency. However, any number encoded by the program should work.</div>
+    <br><br>
     <py-script>
         import js
         import frontend
@@ -35,5 +35,8 @@
                 text = Element("textField").value
                 outArea.element.innerHTML = frontend.readCode(text)
     </py-script>
+    <footer id="footer">
+        <p>Note: If you try to decode a random Godel number there's a good chance it will not decode correctly. Many numbers you may try require primes much higher than are generated. Only so many primes are generated for the sake of program efficiency. However, any number encoded by the program should work.<p>
+    </footer>
 </body>
 </html>

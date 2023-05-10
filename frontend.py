@@ -9,7 +9,7 @@ def readText(word):
         return "Please only input text"
     else:
         eq = encoder.genEq(word)
-        return word + " => " + eq + "= " + str(encoder.encode(word))
+        return "Encoding for " + word + ":<br>" + word + " => " + eq + "= " + str(encoder.encode(word))
 
 # Generates the output for a given code input in
 # the form: code = equation => word
@@ -20,4 +20,4 @@ def readCode(code):
     else:
         word = ''.join(encoder.decode(int(code)))
         eq = encoder.genEq(word)
-        return str(code) + " = " + eq + "=> " + word
+        return "Translation of " + str(code) + ":<br>" +str(code) + " = " + eq + "=> " + word

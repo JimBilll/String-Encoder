@@ -1,0 +1,39 @@
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 10px;
+}
+
+#inputArea textarea {
+    resize: none;
+    padding-left: 10px;
+    font-size: 50px;
+    height: 60px;
+    border: 0px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+#inputArea button {
+    width: 120px;
+    height: 75px;
+    margin-top: 10px;
+    vertical-align: text-bottom;
+}
+
+#outputArea {
+    padding-top:20px;
+    font-size: 30px;
+}
+
+p {
+    font-size: 12px;
+}
+
+#footer{
+    position : absolute;
+    bottom : 0;
+    height : 60px;
+    margin-top : 60px;
+}
