@@ -18,21 +18,17 @@ a {
     resize: none;
     overflow: hidden;
     padding-left: 10px;
+    margin-bottom: 10px;
     font-size: 50px;
     height: 60px;
-    border: 0px;
-}
-
-textarea:focus {
-    outline: none;
+    border-radius: 5px;
 }
 
 #inputArea button {
     background-color: dodgerblue;
     width: 120px;
-    height: 75px;
-    margin-top: 10px;
-    vertical-align: text-bottom;
+    height: 65px;
+    vertical-align: top;
 }
 
 #outputArea {
